@@ -5,7 +5,7 @@ from rango.models import Category
 from rango.models import Page
 
 from rango.forms import CategoryForm
-from rango.forms import PageFor
+from rango.forms import PageForm
 
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
@@ -16,7 +16,9 @@ def index(request):
 
 	
 def about(request):
-	return render(request, 'rango/about.html')
+	print(request.method)
+	print(request.user)
+	return render(request, 'rango/about.html', {})
 
 def show_category(request, category_name_slug):
     context_dict = {}
