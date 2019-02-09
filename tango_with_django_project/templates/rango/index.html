@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html> 
-{% load staticfiles %} <!-- New line -->
+{% load staticfiles %}
 <html>
 	<head> 
 		<title>Rango</title> 
@@ -14,7 +14,9 @@
 		{% if categories %} 
 		<ul>
 			{% for category in categories %} 
-				<li>{{ category.name }}</li> 
+				<li>
+				<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+				</li> 
 			{% endfor %} 
 		</ul>
 		{% else %} 
